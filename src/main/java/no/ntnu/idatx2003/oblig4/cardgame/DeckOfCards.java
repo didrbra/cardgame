@@ -24,8 +24,8 @@ public class DeckOfCards {
    }
 
    public List<PlayingCard> dealHand(int n){
-       if (n < 1 || n > cards.size()) {
-           throw new IllegalArgumentException("Number of cards must be between 1 and " + cards.size());
+       if (n < 1 || n > 52) {
+           throw new IllegalArgumentException("Number of cards must be between 1 and 52");
        }
 
        List<PlayingCard> hand = new ArrayList<>();
