@@ -31,7 +31,7 @@ public class DeckOfCards {
        List<PlayingCard> hand = new ArrayList<>();
        Random rand = new Random();
        for (int i = 0; i < n; i++) {
-           hand.add(cards.remove(rand.nextInt(cards.size())));
+           hand.add(cards.get(rand.nextInt(cards.size())));
        }
        return hand;
    }

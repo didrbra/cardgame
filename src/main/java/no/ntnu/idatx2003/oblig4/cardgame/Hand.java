@@ -8,17 +8,17 @@ import java.util.stream.Collectors;
 
 public class Hand {
 
-    private List<PlayingCard> cards;
+    public List<PlayingCard> cards;
 
     public Hand(List<PlayingCard> cards) {
         this.cards = cards;
     }
 
-    private int getTotalValue(){
+    public int getTotalValue(){
         return cards.stream().mapToInt(PlayingCard::getFace).sum();
     }
 
-    private String getHearts(){
+    public String getHearts(){
         String hearts = cards.stream().filter(card -> card.getSuit() == 'H')
                 .map(PlayingCard::getAsString).
                 collect(Collectors.joining(" "));
@@ -30,11 +30,11 @@ public class Hand {
         }
     }
 
-    private boolean findQueenOfSpades(){
+    public boolean findQueenOfSpades(){
         return cards.stream().anyMatch(card -> card.getSuit() == 'S' && card.getFace() == 12);
     }
 
-    private boolean hasFlush(){
+    public boolean hasFlush(){
         Map<Character, Long> suitCounts = cards.stream().collect(Collectors.groupingBy(PlayingCard::getSuit, Collectors.counting()));
 
         return suitCounts.values().stream().anyMatch(count -> count >= 5);
