@@ -1,14 +1,13 @@
 package no.ntnu.idatx2003.oblig4.cardgame;
 
-import java.security.PublicKey;
 import java.util.List;
 
-public class gameController {
+public class GameController {
 
     private DeckOfCards deck;
     private Hand currentHand;
 
-    public gameController() {
+    public GameController() {
         this.deck = deck;
     }
 

@@ -14,6 +14,12 @@ public class Hand {
         this.cards = cards;
     }
 
+    public String getHandAsString() {
+        return cards.stream()
+                .map(PlayingCard::getAsString)
+                .collect(Collectors.joining(" "));
+    }
+
     public int getTotalValue(){
         return cards.stream().mapToInt(PlayingCard::getFace).sum();
     }
