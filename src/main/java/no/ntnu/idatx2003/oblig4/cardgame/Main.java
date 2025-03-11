@@ -2,6 +2,8 @@ package no.ntnu.idatx2003.oblig4.cardgame;
 
 import javafx.application.Application;
 import javafx.stage.Stage;
+import no.ntnu.idatx2003.oblig4.cardgame.controller.GameController;
+import no.ntnu.idatx2003.oblig4.cardgame.view.GameView;
 
 /**
  * Main class to launch the JavaFX card game application.

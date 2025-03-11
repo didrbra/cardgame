@@ -1,4 +1,4 @@
-package no.ntnu.idatx2003.oblig4.cardgame;
+package no.ntnu.idatx2003.oblig4.cardgame.view;
 
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -7,6 +7,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import no.ntnu.idatx2003.oblig4.cardgame.model.Hand;
+import no.ntnu.idatx2003.oblig4.cardgame.controller.GameController;
 
 /**
  * The game UI (View) component of the card game.
