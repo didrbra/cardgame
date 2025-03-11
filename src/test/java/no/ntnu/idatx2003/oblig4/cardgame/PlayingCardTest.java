@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.*;
 /**
  * Test class for PlayingCard.
  */
-public class PlayingCardTest {
+class PlayingCardTest {
 
     @Test
     void constructorValidInput() {
@@ -17,23 +17,17 @@ public class PlayingCardTest {
 
     @Test
     void constructorInvalidSuit() {
-        assertThrows(IllegalArgumentException.class, () -> {
-            new PlayingCard('X', 1);
-        });
+        assertThrows(IllegalArgumentException.class, () -> {new PlayingCard('X', 1);});
     }
 
     @Test
     void constructorInvalidFaceLow() {
-        assertThrows(IllegalArgumentException.class, () -> {
-            new PlayingCard('H', 0);
-        });
+        assertThrows(IllegalArgumentException.class, () -> {new PlayingCard('H', 0);});
     }
 
     @Test
     void constructorInvalidFaceHigh() {
-        assertThrows(IllegalArgumentException.class, () -> {
-            new PlayingCard('H', 14);
-        });
+        assertThrows(IllegalArgumentException.class, () -> {new PlayingCard('H', 14);});
     }
 
     @Test

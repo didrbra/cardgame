@@ -9,7 +9,9 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 /**
- * The game UI (View).
+ * The game UI (View) component of the card game.
+ * This class handles all the visual elements and user interactions of the game,
+ * including displaying the current hand and game statistics.
  */
 public class GameView {
     private final Stage stage;
@@ -21,12 +23,26 @@ public class GameView {
     private final TextField queenOfSpadesField = new TextField();
     private final TextField flushField = new TextField();
 
+    /**
+     * Creates a new game view.
+     *
+     * @param stage the primary stage for this JavaFX application
+     * @param controller the game controller that handles game logic
+     */
     public GameView(Stage stage, GameController controller) {
         this.stage = stage;
         this.controller = controller;
         initializeUI();
     }
 
+    /**
+     * Initializes all UI components and sets up the layout.
+     * Creates and configures:
+     * - Title label
+     * - Deal and Check buttons
+     * - Display fields for hand information
+     * - Layout configuration
+     */
     private void initializeUI() {
         Label titleLabel = new Label("Card Game");
 
@@ -56,6 +72,12 @@ public class GameView {
         stage.show();
     }
 
+    /**
+     * Handles the deal action when the Deal button is clicked.
+     * - Deals a new hand through the controller
+     * - Updates the hand display
+     * - Clears all previous check results
+     */
     private void dealHand() {
         controller.dealHand();
         Hand hand = controller.getCurrentHand();
@@ -70,6 +92,15 @@ public class GameView {
         }
     }
 
+    /**
+     * Handles the check action when the Check button is clicked.
+     * If a hand exists, displays:
+     * - Total value of cards
+     * - Hearts in the hand
+     * - Presence of queen of spades
+     * - Whether hand contains a flush
+     * If no hand exists, prompts user to deal first.
+     */
     private void checkHand() {
         Hand hand = controller.getCurrentHand();
 
