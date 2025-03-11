@@ -8,7 +8,7 @@ public class GameController {
     private Hand currentHand;
 
     public GameController() {
-        this.deck = deck;
+        this.deck = new DeckOfCards();
     }
 
     public void dealHand(){
