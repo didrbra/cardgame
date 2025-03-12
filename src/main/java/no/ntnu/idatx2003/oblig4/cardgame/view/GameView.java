@@ -112,8 +112,19 @@ public class GameView {
 
             totalValueField.setText(String.valueOf(hand.getTotalValue()));
             heartsField.setText(hand.getHearts());
-            queenOfSpadesField.setText(hand.findQueenOfSpades() ? "Yes" : "No");
-            flushField.setText(hand.hasFlush() ? "Yes" : "No");
+
+        if (hand.findQueenOfSpades()) {
+            queenOfSpadesField.setText("Yes");
+        } else {
+            queenOfSpadesField.setText("No");
+        }
+
+
+        if (hand.hasFlush()) {
+            flushField.setText("Yes");
+        } else {
+            flushField.setText("No");
+        }
         }
 
 }
